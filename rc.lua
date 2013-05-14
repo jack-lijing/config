@@ -210,7 +210,7 @@ globalkeys = awful.util.table.join(
 	---volume control-----
     awful.key({ }, "XF86AudioRaiseVolume",  function() awful.util.spawn("amixer set Master 9%+")  end ),
     awful.key({ }, "XF86AudioLowerVolume",  function() awful.util.spawn("amixer set Master 9%-")  end ),
-    awful.key({ "Menu", }, "F12",  function() awful.util.spawn("firefox")  end ),
+    awful.key({ "Menu", }, "F12",  function() awful.util.spawn("chromium --user-data-dir=/home/lijing/chromium")  end ),
     awful.key({ "Menu", }, "F11",  function() awful.util.spawn(editor_cmd)  end ),
     awful.key({ "Menu", }, "F10",  function() awful.util.spawn(terminal)  end ),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
