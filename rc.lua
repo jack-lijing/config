@@ -42,7 +42,7 @@ end
 beautiful.init("/root/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "xfce4-terminal"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -57,15 +57,15 @@ modkey = "Mod4"
 local layouts =
 {
     awful.layout.suit.floating,
-    awful.layout.suit.tile,
+--    awful.layout.suit.tile,
 --    awful.layout.suit.tile.left,
 --    awful.layout.suit.tile.bottom,
 --    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
+--    awful.layout.suit.fair,
 --    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
+--    awful.layout.suit.spiral,
 --    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+--    awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
 }
@@ -208,11 +208,11 @@ root.buttons(awful.util.table.join(
 
 globalkeys = awful.util.table.join(
 	---volume control-----
-    awful.key({ }, "XF86AudioRaiseVolume",  function() awful.util.spawn("amixer set Master 9%+")  end ),
-    awful.key({ }, "XF86AudioLowerVolume",  function() awful.util.spawn("amixer set Master 9%-")  end ),
-    awful.key({ "Menu", }, "F12",  function() awful.util.spawn("chromium --user-data-dir=/home/lijing/chromium")  end ),
-    awful.key({ "Menu", }, "F11",  function() awful.util.spawn(editor_cmd)  end ),
-    awful.key({ "Menu", }, "F10",  function() awful.util.spawn(terminal)  end ),
+    awful.key({ modkey,		 }, "F1",  function() awful.util.spawn("amixer set Master 9%+")  end ),
+    awful.key({ modkey, 	 }, "F2",  function() awful.util.spawn("amixer set Master 9%-")  end ),
+    awful.key({ modkey,		 }, "F12",  function() awful.util.spawn("chromium --user-data-dir=/home/lijing/chromium")  end ),
+    awful.key({ modkey,		 },, "F11",  function() awful.util.spawn(editor_cmd)  end ),
+    awful.key({ modkey,		 },, "F10",  function() awful.util.spawn(terminal)  end ),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
